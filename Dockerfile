@@ -97,7 +97,7 @@ RUN CHECKSUM=7305b59a3cee178a58eeee86fe78ad7bef7060c6d22cdb027e8d68157356c4c0 &&
     diff $$.file $$.expected && \
     echo 'OK' || echo '*** CORRUPTED!!!'
 
-RUN tar xf crystax-ndk-10.3.2-linux-x86_64.tar.xz -C /opt
+RUN tar xvJf crystax-ndk-10.3.2-linux-x86_64.tar.xz -C /opt
 ENV ANDROID_NDK_HOME /opt/crystax-ndk-10.3.2
 
 # download and install Gradle
