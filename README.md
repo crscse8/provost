@@ -2,7 +2,7 @@
 
 ## Building
 
-This is based on djangoforandroid and the example project from that.
+This is based on djangoforandroid and the provost project from that.
 
 To build:
 
