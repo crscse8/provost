@@ -1,6 +1,6 @@
 all: .virtualenv
 	. .virtualenv/bin/activate && \
-	pip3 install requirements.txt && \
+	pip3 install -r requirements.txt && \
 	python3 manage.py runserver
 
 .virtualenv:
