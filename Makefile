@@ -5,6 +5,7 @@ all: .virtualenv
 	python3 manage.py runserver
 
 .virtualenv:
+	which virtualenv || pip3 install virtualenv
 	virtualenv --python=python3 .virtualenv
 
 requirements.txt: .virtualenv
