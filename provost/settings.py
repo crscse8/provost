@@ -47,20 +47,21 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'djangoforandroid.builder',
-    'djangoforandroid.framework'
+    'djangoforandroid.framework',
 
 #    'djangoforandroid.d4a', #optional
 #    'djangoforandroid.mdl', #optional
 
+    'static_precompiler'
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+#   'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -148,10 +149,10 @@ STATICFILES_DIRS = [
 ANDROID = {
 
     'APK': {
-        'name': "Django for Android",
+        'name': "Sofwerx Provost",
         'version': '0.6',
         'numericversion': 60,
-        'package': 'com.yeisoncardona.djangoforandroid',
+        'package': 'org.sofwerx.provost',
         'icon': os.path.join(BASE_DIR, 'static', 'images', 'icon.png'),
         'statusbarcolor': '#689F38',
         'navigationbarcolor': '#689F38',

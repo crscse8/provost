@@ -1,0 +1,11 @@
+appdirs==1.4.3
+colorama==0.3.9
+Django==2.0.5
+django-static-precompiler==1.8.2
+djangoforandroid==2.18
+Jinja2==2.10
+MarkupSafe==1.0
+python-for-android==0.6.0
+pytz==2018.4
+sh==1.12.4
+six==1.11.0
