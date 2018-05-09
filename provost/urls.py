@@ -30,11 +30,10 @@ urlpatterns = [
     #url(r'^$', TemplateView.as_view(template_name="home.html"), name="home"),
     url(r'^$', Home.as_view(), name="home"),
 
-
-    url(r'^page1/$', TemplateView.as_view(template_name="page_fonts.html"), name="page_fonts"),
-    url(r'^page2/$', TemplateView.as_view(template_name="page_slider.html"), name="page_slider"),
-    url(r'^page3/$', TemplateView.as_view(template_name="page_dialog.html"), name="page_dialog"),
-    url(r'^page4/$', TemplateView.as_view(template_name="page_instore.html"), name="page_instore"),
+    #url(r'^page1/$', TemplateView.as_view(template_name="page_fonts.html"), name="page_fonts"),
+    #url(r'^page2/$', TemplateView.as_view(template_name="page_slider.html"), name="page_slider"),
+    #url(r'^page3/$', TemplateView.as_view(template_name="page_dialog.html"), name="page_dialog"),
+    #url(r'^page4/$', TemplateView.as_view(template_name="page_instore.html"), name="page_instore"),
 
 
 

@@ -175,7 +175,7 @@ ANDROID = {
 
     'SPLASH': {
         'static_html': os.path.join(BASE_DIR, 'templates', 'splash.html'),
-        'resources': [os.path.join(BASE_DIR, 'static', 'images', 'background.png'),],
+        'resources': [os.path.join(BASE_DIR, 'static', 'images', 'sofwerx.png'),],
     },
 
     'KEY': {
