@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+
+  djangoforandroid:
+    build: .
+    image: sofwerx/djangoforandroid
+    volumes:
+      - ./outputs:/outputs
+
