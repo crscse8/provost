@@ -10,7 +10,7 @@
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps."/>
     <meta content='True' name='HandheldFriendly'/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1.0"/>
-    <title>Django for Android</title>
+    <title>Provost</title>
 
     <!--No cache-->
     <meta http-equiv="cache-control" content="max-age=0"/>
@@ -37,7 +37,7 @@
 
         <div class="mdl-layout__header-row">
           <!-- Title -->
-          <span class="mdl-layout-title">{% block title_page %}Demo APP{% endblock %}</span>
+          <span class="mdl-layout-title">{% block title_page %}Provost{% endblock %}</span>
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
           <!-- Navigation. We hide it in small screens. -->
@@ -53,9 +53,11 @@
         <span class="mdl-layout-title">Django for Android</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="{% url "home" %}">Home</a>
+<!--
           <a class="mdl-navigation__link" href="{% url "page_fonts" %}">Default available fonts</a>
           <a class="mdl-navigation__link" href="{% url "page_slider" %}">Simple sliders</a>
           <a class="mdl-navigation__link" href="{% url "page_dialog" %}">Dialogs and Modals</a>
+-->
           <a class="mdl-navigation__link" href="{% url "splash" %}">Splash</a>
           <a class="mdl-navigation__link" href="/admin">Admin</a>
           <a class="mdl-navigation__link" href="/debug">Debug</a>
