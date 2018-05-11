@@ -8,6 +8,7 @@ certain services like Tor hidden services and geth to use th etherium decentrali
 The process managing app, called the "provost", will start and stop different services used for encryption and increased privacy on the network. Any phone with this app installed and running will be included on the network.
 
 ## App Structure
+![alt text](https://github.com/sofwerx/provost/blob/master/images/Screen%20Shot%202018-05-11%20at%203.03.06%20PM.png "App Diagram")
 
 ## Building
 
