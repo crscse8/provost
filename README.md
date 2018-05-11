@@ -7,6 +7,8 @@ certain services like Tor hidden services and geth to use th etherium decentrali
 
 The process managing app, called the "provost", will start and stop different services used for encryption and increased privacy on the network. Any phone with this app installed and running will be included on the network.
 
+## App Structure
+
 ## Building
 
 This is based on djangoforandroid and the provost project from that.
