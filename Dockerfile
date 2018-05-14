@@ -88,6 +88,8 @@ ENV LD_LIBRARY_PATH ${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib6
 #    rm android-ndk-${ANDROID_NDK_VERSION}-linux-x86_64.zip
 #ENV ANDROID_NDK_HOME /opt/android-ndk
 
+# As we are using python3, we need the CrystaX NDK, and _not_ the standard Android NDK
+
 # Install CrystaX NDK
 RUN CHECKSUM=7305b59a3cee178a58eeee86fe78ad7bef7060c6d22cdb027e8d68157356c4c0 && \
     FILE=crystax-ndk-10.3.2-linux-x86_64.tar.xz && \
@@ -173,10 +175,13 @@ RUN dpkg --add-architecture i386
 RUN apt-get -qqy update
 RUN apt-get -qqy install libncurses5:i386 libstdc++6:i386 zlib1g:i386
 
+RUN apt-get install -y pkg-config autoconf automake libtool
+
 ADD . /app
 
 WORKDIR /app
 
+RUN pip3 install -r requirements.txt
 RUN python3 manage.py androidcreate
 RUN python3 manage.py androidapk
 

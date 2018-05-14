@@ -13,7 +13,8 @@ class Python3Recipe(TargetPythonRecipe):
     url = ''
     name = 'python3crystax'
 
-    depends = ['hostpython3crystax']
+    depends = ['python3crystax']
+#    depends = ['hostpython3crystax']
     conflicts = ['python2', 'python3']
 
     from_crystax = True
@@ -30,13 +31,13 @@ class Python3Recipe(TargetPythonRecipe):
         ensure_dir(dirn)
 
         self.ctx.hostpython = 'python{}'.format(self.version)
-        # ensure_dir(join(dirn, 'lib'))
-        # ensure_dir(join(dirn, 'lib', 'python{}'.format(self.version),
-        #                 'site-packages'))
+        ensure_dir(join(dirn, 'lib'))
+        ensure_dir(join(dirn, 'lib', 'python{}'.format(self.version),
+                        'site-packages'))
 
-        # ndk_dir = self.ctx.ndk_dir
-        # sh.cp('-r', '/home/asandy/kivytest/crystax_stdlib', join(dirn, 'lib', 'python3.5'))
-        # sh.cp('-r', '/home/asandy/android/crystax-ndk-10.3.0/sources/python/3.5/libs/armeabi/modules', join(dirn, 'lib', 'python3.5', 'lib-dynload'))
-        # ensure_dir(join(dirn, 'lib', 'site-packages'))
+        ndk_dir = self.ctx.ndk_dir
+        #sh.cp('-r', '/home/asandy/kivytest/crystax_stdlib', join(dirn, 'lib', 'python3.5'))
+        sh.cp('-r', '/opt/crystax-ndk-10.3.2/sources/python/3.5/libs/armeabi/modules', join(dirn, 'lib', 'python3.5', 'lib-dynload'))
+        ensure_dir(join(dirn, 'lib', 'site-packages'))
 
 recipe = Python3Recipe()
