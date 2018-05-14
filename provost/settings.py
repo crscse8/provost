@@ -49,8 +49,8 @@ INSTALLED_APPS = [
     'djangoforandroid.builder',
     'djangoforandroid.framework',
 
-#    'djangoforandroid.d4a', #optional
-#    'djangoforandroid.mdl', #optional
+#    'djangoforandroid.mdl', #optional, for mdl support
+#    'djangoforandroid.d4a', #optional, for urls support
 
     'static_precompiler'
 ]
@@ -161,8 +161,11 @@ ANDROID = {
 
 
     'BUILD': {
-        'exclude_dirs': ['djangoforandroid', 'pythonforandroid'],
+        'exclude_dirs': [],
         'include_exts': ['py', 'png', 'sqlite3', 'html', 'css', 'js', 'svg', 'ttf', 'eot', 'woff', 'woff2', 'otf'],
+        'requirements': ['python3crystax', 'pyjnius', 'django', 'sqlite3', 'djangoforandroid', 'django-static-precompiler' ],
+#        'requirements': ['python3crystax', 'pyjnius', 'django', 'sqlite3', 'djangoforandroid', 'django-static-precompiler', 'python-for-android', 'sh'],
+        'recipes': './recipes'
         },
 
     'ANDROID': {
@@ -185,5 +188,5 @@ ANDROID = {
         'RELEASE_KEYALIAS_PASSWD': 'passwd',
     },
 
-
 }
+

@@ -1,2 +1,9 @@
 .git
+*.pyc
+*.sqlite3
+example/__pycache__/
+outputs/
+.virtualenv
+apk_resources/
+services/*/*darwin*
 Makefile
