@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="org.devwerx.provost" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Provost</name>
+    <description>
+        Service runner
+    </description>
+    <author email="devops@sofwerx.org" href="http://sofwerx.org">
+        SOFWERX
+    </author>
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <plugin name="cordova-plugin-background-mode" spec="https://github.com/katzer/cordova-plugin-background-mode.git" />
+    <plugin name="newrelic-cordova-plugin" spec="https://github.com/newrelic/newrelic-cordova-plugin.git">
+        <variable name="IOS_APP_TOKEN" value="AA1a3f195932875df9f6323f4f7aba09ffc97ac362" />
+        <variable name="ANDROID_APP_TOKEN" value="AA1a3f195932875df9f6323f4f7aba09ffc97ac362" />
+        <variable name="PLUGIN_VERSION" value="5.0.0" />
+        <variable name="ANDROID_AGENT_VER" value="5.18.1" />
+    </plugin>
+    <plugin name="cordova-plugin-speechrecognition" spec="^1.2.0" />
+    <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
+        <application android:debuggable="true" />
+    </edit-config>
+    <engine name="android" spec="^7.0.0" />
+</widget>

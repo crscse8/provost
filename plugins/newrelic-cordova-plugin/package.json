@@ -1,0 +1,46 @@
+{
+  "_from": "git+https://github.com/newrelic/newrelic-cordova-plugin.git",
+  "_id": "newrelic-cordova-plugin@5.0.0",
+  "_inBundle": false,
+  "_location": "/newrelic-cordova-plugin",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/newrelic/newrelic-cordova-plugin.git",
+    "rawSpec": "https://github.com/newrelic/newrelic-cordova-plugin.git",
+    "saveSpec": "git+https://github.com/newrelic/newrelic-cordova-plugin.git",
+    "fetchSpec": "https://github.com/newrelic/newrelic-cordova-plugin.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/newrelic/newrelic-cordova-plugin.git#1740a55ac3e4877a6cd6bae3438f7a18904a7150",
+  "_spec": "https://github.com/newrelic/newrelic-cordova-plugin.git",
+  "_where": "/Users/ianblenke/github.com/ianblenke/provost/provost",
+  "author": {
+    "name": "New Relic"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "New Relic Cordova Plugin for iOS and Android",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "shelljs": "^0.7.6"
+  },
+  "keywords": [
+    "cordova",
+    "newrelic",
+    "monitoring",
+    "ios",
+    "android"
+  ],
+  "name": "newrelic-cordova-plugin",
+  "repo": "https://github.com/newrelic/newrelic-cordova-plugin/",
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "5.0.0"
+}

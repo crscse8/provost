@@ -1,0 +1,45 @@
+{
+  "cordova-plugin-background-mode": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/katzer/cordova-plugin-background-mode.git"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-device": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-device"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-whitelist": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-whitelist@1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "newrelic-cordova-plugin": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/newrelic/newrelic-cordova-plugin.git"
+    },
+    "is_top_level": true,
+    "variables": {
+      "IOS_APP_TOKEN": "AA1a3f195932875df9f6323f4f7aba09ffc97ac362",
+      "ANDROID_APP_TOKEN": "AA1a3f195932875df9f6323f4f7aba09ffc97ac362"
+    }
+  },
+  "cordova-plugin-speechrecognition": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-speechrecognition"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}
