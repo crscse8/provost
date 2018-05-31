@@ -16,6 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+var geolocation = {};
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -146,8 +149,39 @@ var app = {
           });
         });
 
+        console.log("provost initializing geolocation");
+        app.geolocationWatchStart(); 
         console.log("provost initialized");
         //startNodeProject();
+
+    },
+
+    geolocationWatchSuccess: function(position) {
+        geolocation.position = position;
+	console.log('provost Latitude: '          + position.coords.latitude          + "\n" +
+                    'provost Longitude: '         + position.coords.longitude         + "\n" +
+                    'provost Altitude: '          + position.coords.altitude          + "\n" +
+                    'provost Accuracy: '          + position.coords.accuracy          + "\n" +
+                    'provost Altitude Accuracy: ' + position.coords.altitudeAccuracy  + "\n" +
+                    'provost Heading: '           + position.coords.heading           + "\n" +
+                    'provost Speed: '             + position.coords.speed             + "\n" +
+                    'provost Timestamp: '         + position.timestamp                + "\n");
+    },
+    geolocationWatchError: function(error) {
+        geolocation.error = error;
+    },
+    geolocationWatchStart: function() {
+        geolocation.watchId = navigator.geolocation.watchPosition(
+          app.geolocationWatchSuccess,
+          app.geolocationWatchError,
+          { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }
+        );
+    },
+    geolocationWatchStop: function(watchId) {
+        if(geolocation.watchId) {
+          navigator.geolocation.clearWatch(geolocation.watchId);
+          geolocation.watchId = nil;
+        }
     },
 
     // Update DOM on a Received Event
