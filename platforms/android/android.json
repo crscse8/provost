@@ -10,7 +10,7 @@
           "/manifest/application": [
             {
               "xml": "<application android:debuggable=\"true\" />",
-              "count": 2,
+              "count": 1,
               "mode": "merge",
               "id": "config.xml",
               "oldAttrib": {
@@ -97,6 +97,16 @@
             }
           ]
         }
+      },
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"Webserver\"><param name=\"android-package\" value=\"org.apache.cordova.plugin.Webserver\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
       }
     }
   },
@@ -120,6 +130,9 @@
       "PLUGIN_VERSION": "5.0.0",
       "ANDROID_APP_TOKEN": "AA1a3f195932875df9f6323f4f7aba09ffc97ac362",
       "ANDROID_AGENT_VER": "5.18.1",
+      "PACKAGE_NAME": "org.devwerx.provost"
+    },
+    "cordova-plugin-webserver": {
       "PACKAGE_NAME": "org.devwerx.provost"
     }
   },
@@ -163,6 +176,14 @@
       "merges": [
         "window.plugins.speechRecognition"
       ]
+    },
+    {
+      "id": "cordova-plugin-webserver.webserver",
+      "file": "plugins/cordova-plugin-webserver/webserver.js",
+      "pluginId": "cordova-plugin-webserver",
+      "clobbers": [
+        "webserver"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -171,6 +192,7 @@
     "cordova-plugin-geolocation": "4.0.1",
     "cordova-plugin-speechrecognition": "1.1.2",
     "cordova-plugin-whitelist": "1.3.3",
-    "newrelic-cordova-plugin": "5.0.0"
+    "newrelic-cordova-plugin": "5.0.0",
+    "cordova-plugin-webserver": "1.0.1"
   }
 }

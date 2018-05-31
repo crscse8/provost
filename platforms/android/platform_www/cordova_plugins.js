@@ -38,6 +38,14 @@ module.exports = [
     "merges": [
       "window.plugins.speechRecognition"
     ]
+  },
+  {
+    "id": "cordova-plugin-webserver.webserver",
+    "file": "plugins/cordova-plugin-webserver/webserver.js",
+    "pluginId": "cordova-plugin-webserver",
+    "clobbers": [
+      "webserver"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -48,7 +56,8 @@ module.exports.metadata =
   "cordova-plugin-geolocation": "4.0.1",
   "cordova-plugin-speechrecognition": "1.1.2",
   "cordova-plugin-whitelist": "1.3.3",
-  "newrelic-cordova-plugin": "5.0.0"
+  "newrelic-cordova-plugin": "5.0.0",
+  "cordova-plugin-webserver": "1.0.1"
 };
 // BOTTOM OF METADATA
 });

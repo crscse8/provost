@@ -35,5 +35,6 @@
         <application android:debuggable="true" />
     </edit-config>
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1" />
+    <plugin name="cordova-plugin-webserver" spec="https://github.com/bykof/cordova-plugin-webserver" />
     <engine name="android" spec="^7.1.0" />
 </widget>

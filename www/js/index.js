@@ -151,19 +151,64 @@ var app = {
 
         console.log("provost initializing geolocation");
         app.geolocationWatchStart(); 
+
+        console.log("provost initializing webserver");
+        app.webserverStart(); 
+
         console.log("provost initialized");
+    },
+
+    webserverOnRequest: function(request) {
+        console.log("provost webserverOnRequest request: " + request);
+	var position = geolocation.position;
+	var body;
+	if(position) {
+	    body = JSON.stringify({
+		"success": true,
+                "latitude": position.coords.latitude,
+                "longitude": position.coords.longitude,
+                "locationAccuracy": position.coords.accuracy,
+                "altitude": position.coords.altitude,
+                "altitudeAccuracy": position.coords.altitudeAccuracy,
+                "heading": position.coords.heading,
+                "speed": position.coords.speed,
+                "timestamp": position.timestamp
+            });
+	} else {
+	    body = { "success": false, "message": "no position available" }
+	}
+
+        webserver.sendResponse(
+            request.requestId,
+            {
+                status: 200,
+		body: body,
+                headers: {
+                    'Content-Type': 'application/javascript'
+                }
+            },
+            function() {
+               console.log("provost webserver.sendResponse successful");
+            },
+            function(err) {
+               console.log("provost webserver.sendResponse error:" + err);
+	    }
+        );
+    },
+    webserverStart: function() {
+        webserver.onRequest( app.webserverOnRequest );
+        webserver.start(
+            function() {
+              console.log("provost webserver started successfully");
+            },
+            function(err) {
+              console.log("provost webserver failed to start: " + err);
+            },
+            3000);
     },
 
     geolocationWatchSuccess: function(position) {
         geolocation.position = position;
-	console.log('provost Latitude: '          + position.coords.latitude          + "\n" +
-                    'provost Longitude: '         + position.coords.longitude         + "\n" +
-                    'provost Altitude: '          + position.coords.altitude          + "\n" +
-                    'provost Accuracy: '          + position.coords.accuracy          + "\n" +
-                    'provost Altitude Accuracy: ' + position.coords.altitudeAccuracy  + "\n" +
-                    'provost Heading: '           + position.coords.heading           + "\n" +
-                    'provost Speed: '             + position.coords.speed             + "\n" +
-                    'provost Timestamp: '         + position.timestamp                + "\n");
     },
     geolocationWatchError: function(error) {
         geolocation.error = error;

@@ -24,6 +24,9 @@
       "ANDROID_APP_TOKEN": "AA1a3f195932875df9f6323f4f7aba09ffc97ac362",
       "ANDROID_AGENT_VER": "5.18.1",
       "PACKAGE_NAME": "org.devwerx.provost"
+    },
+    "cordova-plugin-webserver": {
+      "PACKAGE_NAME": "org.devwerx.provost"
     }
   },
   "dependent_plugins": {
