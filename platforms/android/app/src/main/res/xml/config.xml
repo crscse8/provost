@@ -6,6 +6,9 @@
     <feature name="BackgroundMode">
         <param name="android-package" value="de.appplant.cordova.plugin.background.BackgroundMode" />
     </feature>
+    <feature name="SpeechRecognition">
+        <param name="android-package" value="com.pbakondy.SpeechRecognition" />
+    </feature>
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
@@ -13,9 +16,6 @@
     <feature name="NewRelicCordovaPlugin">
         <param name="android-package" value="com.newrelic.cordova.plugin.NewRelicCordovaPlugin" />
         <param name="onload" value="true" />
-    </feature>
-    <feature name="SpeechRecognition">
-        <param name="android-package" value="com.pbakondy.SpeechRecognition" />
     </feature>
     <name>Provost</name>
     <description>
@@ -40,4 +40,7 @@
     <preference name="KeepRunning" value="true" />
     <preference name="ANDROID_APP_TOKEN" value="AA1a3f195932875df9f6323f4f7aba09ffc97ac362" />
     <preference name="PLUGIN_VERSION" value="5.0.0" />
+    <feature name="Geolocation">
+        <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
+    </feature>
 </widget>

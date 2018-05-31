@@ -18,7 +18,6 @@
 */
 
 apply plugin: 'com.android.application'
-apply plugin: 'newrelic'
 
 buildscript {
     repositories {
@@ -31,7 +30,6 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.0'
-        classpath "com.newrelic.agent.android:agent-gradle-plugin:5.+"
     }
 }
 
@@ -262,7 +260,6 @@ dependencies {
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
     // SUB-PROJECT DEPENDENCIES END
-    compile 'com.newrelic.agent.android:android-agent:5.+'
 }
 
 def promptForReleaseKeyPassword() {
