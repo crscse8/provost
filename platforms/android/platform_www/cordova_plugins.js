@@ -38,6 +38,14 @@ module.exports = [
     "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
     "pluginId": "cordova-plugin-geolocation",
     "runs": true
+  },
+  {
+    "id": "nodejs-mobile-cordova.nodejs",
+    "file": "plugins/nodejs-mobile-cordova/www/nodejs_apis.js",
+    "pluginId": "nodejs-mobile-cordova",
+    "clobbers": [
+      "nodejs"
+    ]
   }
 ];
 module.exports.metadata = 

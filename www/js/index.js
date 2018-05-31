@@ -152,8 +152,6 @@ var app = {
         console.log("provost initializing geolocation");
         app.geolocationWatchStart(); 
         console.log("provost initialized");
-        //startNodeProject();
-
     },
 
     geolocationWatchSuccess: function(position) {
