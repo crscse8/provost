@@ -42,10 +42,6 @@
               "count": 1
             },
             {
-              "xml": "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />",
-              "count": 1
-            },
-            {
               "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
               "count": 1
             },
@@ -73,10 +69,6 @@
             },
             {
               "xml": "<feature name=\"Geolocation\"><param name=\"android-package\" value=\"org.apache.cordova.geolocation.Geolocation\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"SpeechRecognition\"><param name=\"android-package\" value=\"com.pbakondy.SpeechRecognition\" /></feature>",
               "count": 1
             },
             {
@@ -118,9 +110,6 @@
       "PACKAGE_NAME": "org.devwerx.provost"
     },
     "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "org.devwerx.provost"
-    },
-    "cordova-plugin-speechrecognition": {
       "PACKAGE_NAME": "org.devwerx.provost"
     },
     "cordova-plugin-whitelist": {
@@ -170,14 +159,6 @@
       "runs": true
     },
     {
-      "id": "cordova-plugin-speechrecognition.SpeechRecognition",
-      "file": "plugins/cordova-plugin-speechrecognition/www/speechRecognition.js",
-      "pluginId": "cordova-plugin-speechrecognition",
-      "merges": [
-        "window.plugins.speechRecognition"
-      ]
-    },
-    {
       "id": "cordova-plugin-webserver.webserver",
       "file": "plugins/cordova-plugin-webserver/webserver.js",
       "pluginId": "cordova-plugin-webserver",
@@ -190,7 +171,6 @@
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-background-mode": "0.7.2",
     "cordova-plugin-geolocation": "4.0.1",
-    "cordova-plugin-speechrecognition": "1.1.2",
     "cordova-plugin-whitelist": "1.3.3",
     "newrelic-cordova-plugin": "5.0.0",
     "cordova-plugin-webserver": "1.0.1"

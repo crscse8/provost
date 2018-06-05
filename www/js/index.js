@@ -26,52 +26,6 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
 
-    speechRecognitionListening: function(terms) {
-        console.log("provost speech recognition started listening successfully: " + JSON.stringify(terms));
-    },
-
-    speechRecognitionDeaf: function() {
-        console.log("provost speech recognition failed to start listening");
-    },
-
-    speechRecognitionPermitted: function() {
-        console.log("provost speech recognition given permission");
-        var options = {
-            language: "en-US",
-            matches: 5,
-            prompt: "",
-            showPopup: true,
-            showPartial: true
-        };
-        window.plugins.speechRecognition.startListening(
-	    app.speechRecognitionListening,
-	    app.speechRecognitionDeaf,
-            options);
-    },
-
-    speechRecognitionDenied: function() {
-        console.log("provost speech recognition denied permission");
-    },
-
-    speechRecognitionNotYetPermitted: function() {
-        console.log("provost speech recognition not yet permitted");
-        window.plugins.speechRecognition.requestPermission(
-	    app.speechRecognitionPermitted,
-	    app.speechRecognitionDenied
-        );
-    },
-
-    speechRecognitionAvailable: function() {
-        console.log("provost speech recognition is available");
-	window.plugins.speechRecognition.hasPermission(
-	    app.speechRecognitionPermitted,
-	    app.speechRecognitionNotYetPermitted
-	);
-    },
-    speechRecognitionFailure: function() {
-        console.log("provost speech recognition error");
-    },
-
     // deviceready Event Handler
     //
     // Bind any cordova events here. Common events are:
@@ -96,16 +50,6 @@ var app = {
         enableBackgroundBtn.addEventListener('click', function() {
           console.log("provost enableBackgroundBtn click");
           cordova.plugins.backgroundMode.enable();
-        });
-
-        console.log("provost enableSpeechRecognitionBtn");
-        enableSpeechRecognitionBtn = document.querySelector('#enableSpeechRecognitionBtn');
-        enableSpeechRecognitionBtn.addEventListener('click', function() {
-          console.log("provost enableSpeechRecognition click");
-          window.plugins.speechRecognition.isRecognitionAvailable(
-              app.speechRecognitionAvailable,
-              app.speechRecognitionFailure
-	  );
         });
 
         console.log("provost hook backgroundMode enable");

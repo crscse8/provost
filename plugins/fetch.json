@@ -34,14 +34,6 @@
       "ANDROID_APP_TOKEN": "AA1a3f195932875df9f6323f4f7aba09ffc97ac362"
     }
   },
-  "cordova-plugin-speechrecognition": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-speechrecognition"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-geolocation": {
     "source": {
       "type": "registry",

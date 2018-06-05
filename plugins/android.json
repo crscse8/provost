@@ -13,9 +13,6 @@
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "org.devwerx.provost"
     },
-    "cordova-plugin-speechrecognition": {
-      "PACKAGE_NAME": "org.devwerx.provost"
-    },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "org.devwerx.provost"
     },
