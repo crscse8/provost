@@ -36,7 +36,7 @@
     ```
 If any command is not recognized, there is an issue with the installation or the .bash_profile file.
 
-  ### Clone Provost repo
+### Clone Provost repo
   * In provost dir type:
     ```
     npm install
@@ -52,11 +52,11 @@ If any command is not recognized, there is an issue with the installation or the
     ```
   * Once installation is verified, terminal commands are:
 
-####To check which devices are available
+#### To check which devices are available
 
     adb devices 
 
-####To open a shell on the device
+#### To open a shell on the device
 
     adb shell
 
