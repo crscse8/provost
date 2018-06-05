@@ -1,21 +1,19 @@
 # On the phone:
 
-- Go to Settings/System/About phone
-- Keep tapping on “Build number” until message appears stating “development settings enabled”
-- Back out to System
-- Go to Developer options
-- Scroll down to ensure “Android debugging” is enabled
+- Go to `Settings/System/About phone`
+- Keep tapping on `Build number` until message appears stating `Development settings enabled`
+- Back out to `System`
+- Go to `Developer options`
+- Scroll down to ensure `Android debugging` is enabled
 
 # On Linux Machine:
 
 - Install [Gradle](https://gradle.org/install)
 - Install [SDK](https://developer.android.com/studio/install). Either Android Studio or just SDK tools
 - In Terminal run:
-
     sudo apt-get install android-tools-adb
 
 - Edit bash_profile with the following:
-
     #adjust according to you installation directories
     export ANDROID_HOME=/opt/android/sdk/24.0.2 
     export ANDROID_NDK=//opt/android/ndk/r12b
@@ -28,8 +26,7 @@
     export NDK_PATH=$ANDROID_NDK
     export PATH=$ANDROID_NDK:$PATH
 
-- Verify functionality opening Terminal and by typing :
-
+- Verify functionality opening Terminal and by typing:
     android
     gradle
     adb
@@ -38,7 +35,6 @@ If any command is not recognized, there is an issue with the installation or the
 
 - Clone Provost repo
 - In provost dir type:
-
     npm install
     cordova run android
 
