@@ -28,13 +28,13 @@
     export NDK_PATH=$ANDROID_NDK
     export PATH=$ANDROID_NDK:$PATH
     ```
-  * Verify functionality opening Terminal and by typing:
+  * Verify functionality by opening Terminal and by typing:
     ```
     android
     gradle
     adb
     ```
-If any command is not recognized, there is an issue with the installation or the .bash_profile file.
+	If any command is not recognized, there is an issue with the installation or the .bash_profile file.
 
 ### Clone Provost repo
   * In provost dir type:
@@ -50,7 +50,7 @@ If any command is not recognized, there is an issue with the installation or the
     ```
     sudo usermod -aG plugdev “your username” (do not use quotes)
     ```
-  * Once installation is verified, terminal commands are:
+### Once installation is verified, terminal commands are:
 
 #### To check which devices are available
 
