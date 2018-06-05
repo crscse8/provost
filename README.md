@@ -44,7 +44,7 @@ If build doesn’t work type:
 
     sdkmanager ‘build-tools;19.1.0’
 
-  * In Terminal, to grant full usb privileges to the user, run:
+In Terminal, to grant full usb privileges to the user, run:
 
     sudo usermod -aG plugdev “your username” (do not use quotes)
 
