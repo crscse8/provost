@@ -52,11 +52,11 @@
     ```
 ### Once installation is verified, terminal commands are:
 
-#### To check which devices are available
+#### To check which devices are available:
 
     adb devices 
 
-#### To open a shell on the device
+#### To open a shell on the device:
 
     adb root  //optional to enter the shell directly as root
     adb shell
