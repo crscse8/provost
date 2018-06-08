@@ -58,5 +58,6 @@
 
 #### To open a shell on the device
 
+    adb root  //optional to enter the shell directly as root
     adb shell
 
