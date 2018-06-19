@@ -32,19 +32,19 @@ module.exports = [
     "runs": true
   },
   {
+    "id": "cordova-plugin-speechrecognition.SpeechRecognition",
+    "file": "plugins/cordova-plugin-speechrecognition/www/speechRecognition.js",
+    "pluginId": "cordova-plugin-speechrecognition",
+    "merges": [
+      "window.plugins.speechRecognition"
+    ]
+  },
+  {
     "id": "cordova-plugin-webserver.webserver",
     "file": "plugins/cordova-plugin-webserver/webserver.js",
     "pluginId": "cordova-plugin-webserver",
     "clobbers": [
       "webserver"
-    ]
-  },
-  {
-    "id": "org.apache.cordova.shell-exec.shell-exec",
-    "file": "plugins/org.apache.cordova.shell-exec/www/shell-exec.js",
-    "pluginId": "org.apache.cordova.shell-exec",
-    "clobbers": [
-      "shell-exec"
     ]
   }
 ];
@@ -54,10 +54,10 @@ module.exports.metadata =
   "cordova-plugin-device": "2.0.2",
   "cordova-plugin-background-mode": "0.7.2",
   "cordova-plugin-geolocation": "4.0.1",
+  "cordova-plugin-speechrecognition": "1.1.2",
   "cordova-plugin-whitelist": "1.3.3",
   "newrelic-cordova-plugin": "5.0.0",
-  "cordova-plugin-webserver": "1.0.1",
-  "org.apache.cordova.shell-exec": "1.0.0"
+  "cordova-plugin-webserver": "1.0.1"
 };
 // BOTTOM OF METADATA
 });

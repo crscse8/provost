@@ -24,9 +24,6 @@
     },
     "cordova-plugin-webserver": {
       "PACKAGE_NAME": "org.devwerx.provost"
-    },
-    "org.apache.cordova.shell-exec": {
-      "PACKAGE_NAME": "org.devwerx.provost"
     }
   },
   "dependent_plugins": {
