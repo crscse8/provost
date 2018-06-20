@@ -40,6 +40,7 @@
   * In provost dir type:
     ```
     npm install
+    cordova platform add android
     cordova run android
     ```
   * If build doesn’t work type: 
