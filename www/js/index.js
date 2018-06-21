@@ -19,6 +19,8 @@
 
 var geolocation = {};
 
+////////////////////////////////////////////
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -33,9 +35,21 @@ var app = {
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
 
-        console.log("provost registering speech recognition");
-        console.log("provost cordova.plugins: " + cordova.plugins);
-        console.log("provost window.plugins: " + window.plugins);
+        console.log("provost initializing geolocation");
+        app.geolocationWatchStart();
+
+        console.log("provost initializing webserver");
+        app.webserverStart();
+
+        var md = cordova.require("cordova/plugin_list").metadata;
+        console.log("*** provost cordova.plugins: ");
+        console.log(JSON.stringify(md, null, 2));
+        positionElement = document.getElementById('cordova_plugins');
+        positionElement.setAttribute('style', 'display:block;');
+        plugin_names = Object.keys(md);
+        positionElement.innerHTML = (plugin_names.join("<br />\n"));
+
+        // console.log("provost window.plugins: " + window.plugins);
 
         /* Override the back button on Android to go to background instead of closing the app. */
         console.log("provost overrideBackButton");
@@ -45,11 +59,21 @@ var app = {
         console.log("provost excludeFromTaskList");
         cordova.plugins.backgroundMode.excludeFromTaskList();
 
-        console.log("provost enableBackgroundBtn");
         enableBackgroundBtn = document.querySelector('#enableBackgroundBtn');
         enableBackgroundBtn.addEventListener('click', function() {
           console.log("provost enableBackgroundBtn click");
-          cordova.plugins.backgroundMode.enable();
+          cordova.plugins.backgroundMode.moveToBackground();
+        });
+
+        runRFsweepBtn = document.querySelector('#runRFsweep');
+        enableBackgroundBtn.addEventListener('click', function() {
+          console.log("provost runRFsweep click");
+          cmd = ['/data/chroot.sh', 'EDGES/hackrf/powers.sh'];
+          window.ShellExec.exec(cmd, function(rtn) {
+            console.log("provost runRFsweep run");
+            console.log('exit status: ' + rtn.exitStatus);
+            console.log('cmd output: ' + rtn.output);
+          });
         });
 
         console.log("provost hook backgroundMode enable");
@@ -93,51 +117,45 @@ var app = {
           });
         });
 
-        console.log("provost initializing geolocation");
-        app.geolocationWatchStart(); 
-
-        console.log("provost initializing webserver");
-        app.webserverStart(); 
-
         console.log("provost initialized");
     },
 
-    webserverOnRequest: function(request) {
-        console.log("provost webserverOnRequest request: " + request);
-	var position = geolocation.position;
-	var body;
-	if(position) {
-	    body = JSON.stringify({
-		"success": true,
-                "latitude": position.coords.latitude,
-                "longitude": position.coords.longitude,
-                "locationAccuracy": position.coords.accuracy,
-                "altitude": position.coords.altitude,
-                "altitudeAccuracy": position.coords.altitudeAccuracy,
-                "heading": position.coords.heading,
-                "speed": position.coords.speed,
-                "timestamp": position.timestamp
-            });
-	} else {
-	    body = { "success": false, "message": "no position available" }
-	}
+  webserverOnRequest: function(request) {
+      console.log("provost webserverOnRequest request: " + request);
+    	var position = geolocation.position;
+    	var body;
+    	if(position) {
+    	    body = JSON.stringify({
+    		"success": true,
+                    "latitude": position.coords.latitude,
+                    "longitude": position.coords.longitude,
+                    "locationAccuracy": position.coords.accuracy,
+                    "altitude": position.coords.altitude,
+                    "altitudeAccuracy": position.coords.altitudeAccuracy,
+                    "heading": position.coords.heading,
+                    "speed": position.coords.speed,
+                    "timestamp": position.timestamp
+                });
+    	} else {
+    	    body = { "success": false, "message": "no position available" }
+    	}
 
-        webserver.sendResponse(
-            request.requestId,
-            {
-                status: 200,
-		body: body,
-                headers: {
-                    'Content-Type': 'application/javascript'
-                }
-            },
-            function() {
-               console.log("provost webserver.sendResponse successful");
-            },
-            function(err) {
-               console.log("provost webserver.sendResponse error:" + err);
-	    }
-        );
+            webserver.sendResponse(
+                request.requestId,
+                {
+                    status: 200,
+    		body: body,
+                    headers: {
+                        'Content-Type': 'application/javascript'
+                    }
+                },
+                function() {
+                   console.log("provost webserver.sendResponse successful");
+                },
+                function(err) {
+                   console.log("provost webserver.sendResponse error:" + err);
+    	    }
+            );
     },
     webserverStart: function() {
         webserver.onRequest( app.webserverOnRequest );
@@ -153,6 +171,10 @@ var app = {
 
     geolocationWatchSuccess: function(position) {
         geolocation.position = position;
+
+        positionElement = document.getElementById('curpos');
+        positionElement.setAttribute('style', 'display:block;');
+        positionElement.innerHTML = geolocation.position.coords.latitude + ", " + geolocation.position.coords.longitude;
     },
     geolocationWatchError: function(error) {
         geolocation.error = error;
@@ -184,6 +206,8 @@ var app = {
     }
 };
 
+////////////////////////////////////////////
+
 app.initialize();
 
 function channelListener(msg) {
@@ -203,5 +227,5 @@ function startNodeProject() {
     nodejs.channel.setListener(channelListener);
     nodejs.start('main.js', startupCallback);
     // To disable the stdout/stderr redirection to the Android logcat:
-    // nodejs.start('main.js', startupCallback, { redirectOutputToLogcat: false });
+    //nodejs.start('main.js', startupCallback, { redirectOutputToLogcat: false });
 };

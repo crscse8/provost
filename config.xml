@@ -35,5 +35,7 @@
     </edit-config>
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1" />
     <plugin name="cordova-plugin-webserver" spec="https://github.com/bykof/cordova-plugin-webserver" />
+    <plugin name="org.apache.cordova.shell-exec" spec="https://github.com/petervojtek/cordova-plugin-shell-exec.git" />
     <engine name="android" spec="^7.1.0" />
+    <engine name="browser" spec="^5.0.3" />
 </widget>

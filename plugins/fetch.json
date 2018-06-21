@@ -49,5 +49,13 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "org.apache.cordova.shell-exec": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/petervojtek/cordova-plugin-shell-exec.git"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

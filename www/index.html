@@ -32,7 +32,11 @@
     <body>
       <!-- Accent-colored raised button with ripple -->
       <button id="enableBackgroundBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-        Enable background
+        Run in background
+      </button>
+
+      <button id="runRFsweep" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Run RF sweep
       </button>
 
         <div class="app">
@@ -40,6 +44,11 @@
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
+                <p>Current position: <span id="curpos"> </span></p>
+                <p style="font-size: 50%; line-height: 100%;">cordova plugins:
+                  <span id="cordova_plugins">
+                  </span>
+                </p>
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
