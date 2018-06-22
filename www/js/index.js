@@ -59,24 +59,36 @@ var app = {
         console.log("provost excludeFromTaskList");
         cordova.plugins.backgroundMode.excludeFromTaskList();
 
+
+        runRFsweepBtn = document.querySelector('#runRFsweepBtn');
+        runRFsweepBtn.addEventListener('click', function() {
+          console.log("provost runRFsweep click");
+
+          cmd = ['/system/xbin/su','-c','"/data/local/nhsystem/kali-armhf/EDGES/hackrf/chroot.sh"'];
+          // cmd = ['/system/xbin/su','-c','"/system/bin/chroot /data/local/nhsystem/kali-armhf/ /usr/local/bin/hackrf_sweep -1 -f1:7250 -w 100000 -l32 -g8"'];
+          console.log("About to ShellExec: " + cmd);
+          window.ShellExec.exec(cmd, function(rtn) {
+            console.log("provost ShellExec: " + cmd);
+            console.log('exit status: ' + rtn.exitStatus);
+            console.log('cmd output: ' + rtn.output);
+          });
+        });
+        console.log("Added Run RF Sweep button handler");
+
         enableBackgroundBtn = document.querySelector('#enableBackgroundBtn');
         enableBackgroundBtn.addEventListener('click', function() {
           console.log("provost enableBackgroundBtn click");
           cordova.plugins.backgroundMode.moveToBackground();
         });
 
-        runRFsweepBtn = document.querySelector('#runRFsweep');
-        enableBackgroundBtn.addEventListener('click', function() {
-          console.log("provost runRFsweep click");
-          cmd = ['/data/chroot.sh', 'EDGES/hackrf/powers.sh'];
-          window.ShellExec.exec(cmd, function(rtn) {
-            console.log("provost runRFsweep run");
-            console.log('exit status: ' + rtn.exitStatus);
-            console.log('cmd output: ' + rtn.output);
-          });
+        quitAppBtn = document.querySelector('#quitAppBtn');
+        quitAppBtn.addEventListener('click', function() {
+          console.log("provost is exiting now, goodbye!");
+          navigator.app.exitApp();
         });
 
-        console.log("provost hook backgroundMode enable");
+
+        // console.log("provost hook backgroundMode enable");
         cordova.plugins.backgroundMode.on('enable', function() {
           console.log("provost backgroundMode enable");
           cordova.plugins.backgroundMode.configure({
@@ -84,7 +96,7 @@ var app = {
           });
         });
 
-        console.log("provost hook backgroundMode disable");
+        // console.log("provost hook backgroundMode disable");
         cordova.plugins.backgroundMode.on('disable', function() {
           console.log("provost backgroundMode disable");
           cordova.plugins.backgroundMode.configure({
@@ -92,30 +104,30 @@ var app = {
           });
         });
 
-        console.log("provost hook backgroundMode activate");
-        cordova.plugins.backgroundMode.on('activate', function() {
-          console.log("provost backgroundMode activate");
-          cordova.plugins.backgroundMode.disableWebViewOptimizations();
-          cordova.plugins.backgroundMode.configure({
-              text: "Background mode activated"
-          });
-        });
-
-        console.log("provost hook backgroundMode deactivate");
-        cordova.plugins.backgroundMode.on('deactivate', function() {
-          console.log("provost backgroundMode deactivate");
-          cordova.plugins.backgroundMode.configure({
-              text: "Background mode deactivated"
-          });
-        });
-
-        console.log("provost hook backgroundMode failure");
-        cordova.plugins.backgroundMode.on('failure', function() {
-          console.log("provost backgroundMode failure");
-          cordova.plugins.backgroundMode.configure({
-              text: "Background mode failure"
-          });
-        });
+        // console.log("provost hook backgroundMode activate");
+        // cordova.plugins.backgroundMode.on('activate', function() {
+        //   console.log("provost backgroundMode activate");
+        //   cordova.plugins.backgroundMode.disableWebViewOptimizations();
+        //   cordova.plugins.backgroundMode.configure({
+        //       text: "Background mode activated"
+        //   });
+        // });
+        //
+        // console.log("provost hook backgroundMode deactivate");
+        // cordova.plugins.backgroundMode.on('deactivate', function() {
+        //   console.log("provost backgroundMode deactivate");
+        //   cordova.plugins.backgroundMode.configure({
+        //       text: "Background mode deactivated"
+        //   });
+        // });
+        //
+        // console.log("provost hook backgroundMode failure");
+        // cordova.plugins.backgroundMode.on('failure', function() {
+        //   console.log("provost backgroundMode failure");
+        //   cordova.plugins.backgroundMode.configure({
+        //       text: "Background mode failure"
+        //   });
+        // });
 
         console.log("provost initialized");
     },
